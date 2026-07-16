@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-color: #002060;
+  --primary-hover: #001540;
+  --secondary-color: #4b5563;
+  --accent-gold: #f1b51c;
+  --navy-dark: #001a40;
+  --navy-darker: #00112c;
+  --bg-light: #f8f9fa;
+  
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  display: block !important;
+  min-height: 100vh;
+}
+
+/* Custom Typography & Headings */
+h1, h2, h3, h4, h5, h6, .font-outfit {
+  font-family: 'Outfit', sans-serif !important;
+}
+
+/* Custom Spacing */
+.mt-n4 {
+  margin-top: -2.5rem !important;
+}
+@media (max-width: 768px) {
+  .mt-n4 {
+    margin-top: -1rem !important;
+  }
+}
+
+/* Custom Transitions & Hover Effects */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-primary:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Action Cards Styles */
+.action-card {
+  transition: all 0.25s ease;
+}
+.action-card:hover {
+  background-color: #00265d !important;
+}
+.action-card:hover .arrow-btn {
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.action-card:hover .arrow-btn svg {
+  color: #ffffff !important;
+  transform: translateX(2px);
+}
+.arrow-btn svg {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Custom Colors & Utilities */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+.btn-outline-primary {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  transition: all 0.2s ease;
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.text-navy-dark {
+  color: var(--navy-dark) !important;
+}
+
+/* Card Hover Effects */
+.hover-shadow {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-shadow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* FAQ Custom Hover */
+.card.border-primary {
+  box-shadow: 0 4px 12px rgba(0, 32, 96, 0.08) !important;
+}
+
+/* Footer Link Hover */
+.hover-white:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Font helpers */
+.fs-7 {
+  font-size: 0.85rem !important;
+}
+
+.tracking-wider {
+  letter-spacing: 0.08em;
+}
+
+.gap-3\.5 {
+  gap: 0.9rem !important;
+}
+
+.gap-1\.5 {
+  gap: 0.4rem !important;
+}
+
+.py-1\.5 {
+  padding-top: 0.38rem !important;
+  padding-bottom: 0.38rem !important;
+}
+
+.px-2\.5 {
+  padding-left: 0.6rem !important;
+  padding-right: 0.6rem !important;
+}
+
+/* Auth Modal Custom Styles */
+.auth-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 1060;
+}
+
+.auth-modal-content {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-enter {
+  animation: modalEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.form-section-title {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.section-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.recaptcha-widget {
+  transition: all 0.2s ease;
+}
+.recaptcha-widget:hover {
+  border-color: #b5b5b5 !important;
+  background-color: #f0f0f0 !important;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.hover-bg-white-10:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Custom Scrollbar for Modal Scroll */
+.auth-modal-content ::-webkit-scrollbar {
+  width: 6px;
+}
+.auth-modal-content ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.auth-modal-content ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.auth-modal-content ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hero Responsive Text Overlay */
+.hero-overlay {
+  background: linear-gradient(90deg, #ebf3fc 0%, #ebf3fc 35%, rgba(235,243,252,0.92) 50%, rgba(235,243,252,0) 88%);
+}
+@media (max-width: 991px) {
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(235,243,252,0.98) 0%, rgba(235,243,252,0.95) 60%, rgba(235,243,252,0.85) 100%);
+  }
+}
+
+/* Action Cards Responsive Grid Borders */
+.action-card {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.action-card:last-child {
+  border-bottom: none;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 2x2 grid borders on tablet */
+  .action-card {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .action-card:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .action-card:nth-child(3),
+  .action-card:nth-child(4) {
+    border-bottom: none;
+  }
+}
+@media (min-width: 992px) {
+  /* 1x4 horizontal grid borders on desktop */
+  .action-card {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .action-card:last-child {
+    border-right: none;
+  }
+}
+
+/* General Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
